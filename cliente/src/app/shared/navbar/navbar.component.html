@@ -1,0 +1,88 @@
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container-fluid">
+    <img
+      src="https://scontent.fclq2-1.fna.fbcdn.net/v/t39.30808-6/326747442_487456640130579_1976139363330972179_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeGnAvb3mze-U2oAq5-zzO-5CkTQmR22IdkKRNCZHbYh2X6HeoI7R6Bt7H9qRNLXqnra4hYgRbNcnop2JmcfE7MP&_nc_ohc=TrU6FvcOL-sQ7kNvwG8ELzm&_nc_oc=AdlbBnra88MGKTV_1oHUpTvA_Ty97rBtVDbPM57ZoqkvzpTMHHbuUbfdAC7U0Gofcfc8ijURSfh8ILmbrtrFTZl3&_nc_zt=23&_nc_ht=scontent.fclq2-1.fna&_nc_gid=TylvS2rxIybnkAgjTNECXw&oh=00_Afc0-IZryyNHgPs2Bonwz7inZgQFGZfLkvLNXIcE_4cCXg&oe=69057881"
+      alt="Logo"
+      width="45"
+      class="d-inline-block align-text-top"
+    />
+    <a class="navbar-brand ms-2" routerLink="/" routerLinkActive="active"
+        >Riviera Rescue</a
+      >
+    
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/" routerLinkActive="active"
+            >Inicio</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/mascotas" routerLinkActive="active"
+            >Mascotas</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/donar" routerLinkActive="active"
+            >Donar</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/faq" routerLinkActive="active"
+            >FAQ</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/contacto" routerLinkActive="active"
+            >Contacto</a
+          >
+        </li>
+
+        <div *ngIf="isAuthenticated() && isAdmin()">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                routerLink="/adopciones"
+                routerLinkActive="active"
+                >Adopciones</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                routerLink="/donaciones"
+                routerLinkActive="active"
+                >Donaciones</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                routerLink="/usuarios"
+                routerLinkActive="active"
+                >Usuarios</a
+              >
+            </li>
+          </ul>
+        </div>
+        <button class="btn btn-light" (click)="logout()" *ngIf="isAuthenticated()">Cerrar sesión</button>
+      </ul>
+     
+    </div>
+    <div class="ms-auto d-flex align-items-center">
+      <ul class="navbar-nav ms-auto">
+        
+      <button
+        type="button"
+        class="btn btn-light"
+        routerLink="/login"
+        routerLinkActive="active"
+        *ngIf="!isAuthenticated()"
+      >
+        Login
+      </button>
+      </ul>
+    </div>
+  </div>
+</nav>
