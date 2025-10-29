@@ -3,13 +3,14 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Donacion } from '../../models/donacion';
 import { Router, ActivatedRoute } from '@angular/router';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DonacionesService {
 
-  private apiUrl = `http://localhost:3000/donaciones`;
+  private apiUrl = `${environment.apiUrl}/donaciones`;
 
   constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute) {}
 

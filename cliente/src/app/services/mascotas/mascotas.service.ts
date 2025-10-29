@@ -3,13 +3,14 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Mascota } from '../../models/mascota';
 import { Router, ActivatedRoute } from '@angular/router';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MascotaService {
 
-  private apiUrl = `http://localhost:3000/mascotas`;
+  private apiUrl = `${environment.apiUrl}/mascotas`;
 
   constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute) {}
 

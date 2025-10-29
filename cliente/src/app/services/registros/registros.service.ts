@@ -2,13 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RegistrosService {
 
-  public apiUrl = `http://localhost:3000/register/new`;
+  public apiUrl = `${environment.apiUrl}/register/new`;
 
   constructor( private http: HttpClient, private router: Router, private route: ActivatedRoute ) {}
 

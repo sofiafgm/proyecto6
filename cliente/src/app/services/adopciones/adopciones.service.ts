@@ -3,13 +3,14 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Adopcion } from '../../models/adopcion';
 import { Router, ActivatedRoute } from '@angular/router';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AdopcionService {
 
-  private apiUrl = `http://localhost:3000/adopciones`;
+  private apiUrl = `${environment.apiUrl}/adopciones`;
 
   constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute) {}
 

@@ -3,13 +3,14 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { Usuario } from '../../models/usuario';
 import { Router, ActivatedRoute } from '@angular/router';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsuarioService {
 
-   private apiUrl = `http://localhost:3000/usuarios`;
+   private apiUrl = `${environment.apiUrl}/usuarios`;
   
     constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute) {}
   
