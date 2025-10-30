@@ -133,8 +133,8 @@ export class MascotasComponent implements OnInit {
           this.showModal(user);
         }
       } else {
-        alert('Debes iniciar sesión para adoptar una mascota.');
         this.router.navigate(['/login']);
+        alert('Debes iniciar sesión para adoptar una mascota.');
       }
     });
   }
