@@ -1,4 +1,5 @@
-<div class="container mt-5" style="max-width: 400px;">
+<div class="row position-relative">
+<div class="container mt-5 col-md-6" style="max-width: 400px;">
   <h2 class="mb-4 text-center">Iniciar sesión</h2>
   <form (ngSubmit)="onSubmit()" #form="ngForm">
     <div class="mb-3">
@@ -24,9 +25,14 @@
       />
     </div>
     <div class="d-grid gap-3">
-      <button type="button" class="btn btn-secondary" routerLink="/registro" routerLinkActive="active">Registrarse</button>
       <button type="submit" class="btn btn-primary">Ingresar</button>
       <div class="text-danger mt-2" *ngIf="error">{{ error }}</div> 
     </div>
   </form>
+</div>
+
+<div class="container mt-5 col-md-6 text-center align" style="max-width: 400px;">
+    <h2 class="mb-4 text-center">Si aún no tienes una cuenta, crea una aquí</h2>
+  <button type="button" class="btn btn-primary" routerLink="/registro" routerLinkActive="active">Registrarse</button>
+</div>
 </div>
